@@ -2,17 +2,17 @@
 
 def main():
     ## create a dictionary
-    switch = {'hostname': 'sw1', 'ip': '10.0.1.1', 'versioon': '1.2', 'vendor': 'cisco'}
+    switch = {'hostname': 'sw1', 'ip': '10.0.1.1', 'version': '1.2', 'vendor': 'cisco'}
 
     ## display parts of the dictionary
     print( switch['hostname'] )
     print( switch['ip'] )
-    
+
     ## request a 'fake' key
-    print( switch['lynx'] )
-    
+    #  print( switch['lynx'] )
+
     ## request a 'fake' key with .get() method
-    print( "First test - .get ()" )
+    print( "First test - .get()" )
     print( switch.get('lynx') )
 
     print( "Second test - .get()" )
@@ -27,4 +27,19 @@ def main():
     print( "Fifth test - .values()" )
     print( switch.values() )
 
+    print( "Sixth test - .pop()" )
+    switch.pop('version') # removes this key (and value) pair
+    print( switch.keys() ) # notice the value of version is gone
+    print( switch.values() ) # notice the value 1.2
+
+    print( "Seventh test - ADD a new value" )
+    switch['adminlogin'] = 'karl08'
+    print( switch.keys() )
+    print( switch.values() )
+
+    print( "Eighth test - ADD a new value" )
+    switch['password'] = 'querty'
+    print( switch.keys() )
+    print( switch.values() )
+    
 main()
