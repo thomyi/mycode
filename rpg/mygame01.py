@@ -26,17 +26,17 @@ def showStatus():
 #an inventory, which is initially empty
 inventory = []
 
-#a dictionary linking a room to other rooms
+## dictionary linking a room to other rooms
 rooms = {
 
             'Hall' : { 
                   'south' : 'Kitchen'
-                  'east'  : 'Dining Room'
+                  'east'  : 'Dining Room',
                   'item'  : 'key'
                 },
 
             'Kitchen' : {
-                  'north' : 'Hall'
+                  'north' : 'Hall',
                   'item'  : 'monster',
                 },
             'Dining Room' : {
