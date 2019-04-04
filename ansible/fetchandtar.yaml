@@ -3,15 +3,19 @@
   name: Fetching and Tarring files
   
 
-  tasks:  
+  tasks:
+  - debug:
+      var: ansible_system_vendor
+
   - archive:
       path: /tmp/file1.txt
-      dest: /tmp/{{ ansible_date_time_data }}file1.txt.gz
+      dest: /tmp/{{ ansible_date_time.date }}file1.txt.gz
       format: gz
- 
+    when: in investory_hostname|search("e")
+
   - debug:
-      var: inventoory_hostname
+      var: inventory_hostname
 
   - fetch: 
-      src: /tmp/file1.txt.gz
+      src: /tmp/{{ ansible_date_time.date }}file1.txt.gz
       dest: /home/student/mycode/ansible/backup/

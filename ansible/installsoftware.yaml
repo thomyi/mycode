@@ -1,0 +1,24 @@
+---
+- name: figlet and bastet
+  hosts: planet-express:! earthling
+  become: yes
+
+  tasks:
+
+  - debug: 
+      var: ansible_lsb.id
+
+  - apt:
+      name: figlet
+      update_cache: yes
+      state: present
+    when: ansible_lsb.id == "Ubuntu"
+  # become: yes
+
+  - apt:
+      name: bastet
+      update_cache: yes
+      state: present
+    when: ansible_lsb.id == "Ubuntu"
+  # become: yes
+
