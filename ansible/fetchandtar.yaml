@@ -1,0 +1,17 @@
+---
+- hosts: planet-express
+  name: Fetching and Tarring files
+  
+
+  tasks:  
+  - archive:
+      path: /tmp/file1.txt
+      dest: /tmp/{{ ansible_date_time_data }}file1.txt.gz
+      format: gz
+ 
+  - debug:
+      var: inventoory_hostname
+
+  - fetch: 
+      src: /tmp/file1.txt.gz
+      dest: /home/student/mycode/ansible/backup/
