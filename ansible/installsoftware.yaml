@@ -1,15 +1,20 @@
 ---
 - name: figlet and bastet
-  hosts: planet-express:! earthling
+  hosts: planet-express:!earthling
   become: yes
 
-  tasks:
+  vars_prompt:
+  - name: "apt_to_install"
+    prompt: "what app would yoou like to install?"
+    private: yes
 
+  tasks:
+ 
   - debug: 
       var: ansible_lsb.id
 
   - apt:
-      name: figlet
+      name: "{{ apt_to_install }}"
       update_cache: yes
       state: present
     when: ansible_lsb.id == "Ubuntu"
