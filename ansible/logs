@@ -27,3 +27,73 @@
 2019-04-04 14:10:06,990 p=1786 u=student |  bender                     : ok=4    changed=0    unreachable=0    failed=0   
 2019-04-04 14:10:06,990 p=1786 u=student |  fry                        : ok=4    changed=0    unreachable=0    failed=0   
 2019-04-04 14:10:06,990 p=1786 u=student |  zoidbert                   : ok=4    changed=0    unreachable=0    failed=0   
+2019-04-04 14:59:18,467 p=3705 u=student |  ERROR! Invalid variable name in vars specified for Play: 'phoenix-library' is not a valid variable name
+
+The error appears to have been in '/home/student/mycode/ansible/template.yaml': line 6, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  vars:
+    port: 22
+    ^ here
+
+2019-04-04 14:59:42,040 p=3712 u=student |  ERROR! Invalid variable name in vars specified for Play: 'phoenix-library' is not a valid variable name
+
+The error appears to have been in '/home/student/mycode/ansible/template.yaml': line 6, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  vars:
+    port: "22"
+    ^ here
+
+2019-04-04 15:01:01,314 p=3720 u=student |  ERROR! Invalid variable name in vars specified for Play: 'phoenix-library' is not a valid variable name
+
+The error appears to have been in '/home/student/mycode/ansible/template.yaml': line 5, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  vars:
+    port: "22"
+    ^ here
+
+2019-04-04 15:01:40,768 p=3727 u=student |  ERROR! Invalid variable name in vars specified for Play: 'phoenix-library' is not a valid variable name
+
+The error appears to have been in '/home/student/mycode/ansible/template.yaml': line 5, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  vars:
+  -  port: "22"
+  ^ here
+
+2019-04-04 15:06:22,109 p=3759 u=student |  ERROR! Vars in a Play must be specified as a dictionary, or a list of dictionaries
+
+The error appears to have been in '/home/student/mycode/ansible/template.yaml': line 5, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  vars:
+  -  portapotty "22"
+  ^ here
+
+2019-04-04 15:06:55,237 p=3767 u=student |  PLAY [Learning about templates] ******************************************************************************************************************
+2019-04-04 15:06:55,248 p=3767 u=student |  TASK [Gathering Facts] ***************************************************************************************************************************
+2019-04-04 15:06:56,341 p=3767 u=student |  ok: [bender]
+2019-04-04 15:06:56,361 p=3767 u=student |  ok: [fry]
+2019-04-04 15:06:56,421 p=3767 u=student |  ok: [zoidbert]
+2019-04-04 15:06:56,440 p=3767 u=student |  TASK [template] **********************************************************************************************************************************
+2019-04-04 15:06:56,604 p=3767 u=student |  fatal: [zoidbert]: FAILED! => {"changed": false, "msg": "Could not find or access '/home/student/mycode/ansible/templates/app.cfg.j2' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-04-04 15:06:56,613 p=3767 u=student |  fatal: [fry]: FAILED! => {"changed": false, "msg": "Could not find or access '/home/student/mycode/ansible/templates/app.cfg.j2' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-04-04 15:06:56,657 p=3767 u=student |  fatal: [bender]: FAILED! => {"changed": false, "msg": "Could not find or access '/home/student/mycode/ansible/templates/app.cfg.j2' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2019-04-04 15:06:56,659 p=3767 u=student |  	to retry, use: --limit @/home/student/mycode/ansible/template.retry
+
+2019-04-04 15:06:56,660 p=3767 u=student |  PLAY RECAP ***************************************************************************************************************************************
+2019-04-04 15:06:56,660 p=3767 u=student |  bender                     : ok=1    changed=0    unreachable=0    failed=1   
+2019-04-04 15:06:56,660 p=3767 u=student |  fry                        : ok=1    changed=0    unreachable=0    failed=1   
+2019-04-04 15:06:56,661 p=3767 u=student |  zoidbert                   : ok=1    changed=0    unreachable=0    failed=1   

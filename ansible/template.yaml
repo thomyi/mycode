@@ -1,0 +1,14 @@
+---
+- name: Learning about templates
+  hosts: planet-express
+  vars:
+#   porta: 22
+   phoenixlibrary: secretdriver
+   listenips: 10.2.2.15
+   instruct: sam
+  
+  tasks: 
+  - template:
+      src: /home/student/mycode/ansible/templates/app.cfg.j2
+      dest: ~/
+          
